@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block sidebar %}
+{% include env.sidebar %}
+{% endblock %}
+
+{% block content %}
+{% if env.markdown == 1 %}
+{{ env.output | safe }}
+{% else %}
+<pre>{{ env.output }}</pre>
+{% endif %}
+{% endblock %}

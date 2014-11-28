@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		{% block head %}
+		<title>reductor@{{env.host}}</title>
+		<link href="/static/css/metro-bootstrap.css" rel="stylesheet" >
+		<link href="/static/css/reductor.css" rel="stylesheet" >
+		<link href="/static/css/iconFont.css" rel="stylesheet">
+		<script src="/static/js/jquery/jquery.min.js"></script>
+		<script src="/static/js/jquery/jquery.widget.min.js"></script>
+		<script src="/static/min/metro.min.js"></script>
+		{% endblock %}
+	</head>
+	<body class="metro">
+		{% block navbar %}
+		{% include 'nav_bar.html' %}
+		{% endblock %}
+		<div class="grid">
+			{% block grid %}
+			<div class="row">
+				{% block sidebar %}
+				{% include env.sidebar %}
+				{% endblock %}
+				<div class='span12'>
+					{% block content %}
+					{% endblock %}
+				</div>
+			</div>
+			{% endblock %}
+		</div>
+	</body>
+</html>

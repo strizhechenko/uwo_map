@@ -1,0 +1,23 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	function drawChart(title, raw_data, name){
+		function _drawChart() {
+			var data = google.visualization.arrayToDataTable(
+				raw_data
+			);
+
+			var options = {
+				title: title
+			};
+
+			var chart = new google.visualization.LineChart(document.getElementById('chart_div_' + name));
+			chart.draw(data, options);
+		}
+		return _drawChart;
+	}
+
+	{% for graphic in env.data %}
+		google.setOnLoadCallback(drawChart('{{graphic.title}}', {{graphic.raw_data | safe}}, '{{graphic.name}}'));
+	{% endfor %}
+</script>

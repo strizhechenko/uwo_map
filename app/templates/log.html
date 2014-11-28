@@ -1,0 +1,20 @@
+{% if env.print == 1 %}
+{% extends "print.html" %}
+{% else %}
+{% extends "default.html" %}
+{% endif %}
+
+{% block head %}
+{{ super() }}
+<script src="/static/js/metro-global.js"></script>
+<script src="/static/js/metro-locale.js"></script>
+<script src="/static/js/metro-calendar.js"></script>
+{% endblock %}
+
+{% block content %}
+<a href="/info/log" class='button bg-hover-dark fg-hover-white'>Лог обновлений РКН</a>
+<a href="/info/log_diag" class='button bg-hover-dark fg-hover-white'>Лог диагностики</a>
+<a href="/info/log_full" class='button bg-hover-dark fg-hover-white'>Полный лог</a>
+<hr>
+{{ super() }}
+{% endblock %}

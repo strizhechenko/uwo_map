@@ -1,0 +1,18 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import urllib
+import sys
+
+def _unquoute(url):
+    return urllib.unquote(url)
+
+for url in sys.stdin.readlines():
+#    try:
+    sys.stdout.write(_unquoute(url))
+#    except UnicodeDecodeError:
+#	sys.stderr.write('2 ')
+#        print url
+#    except UnicodeEncodeError:
+#	sys.stderr.write('3 ')
+#        print url
