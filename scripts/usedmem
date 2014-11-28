@@ -1,5 +1,0 @@
-#!/bin/bash
-
-totalmem=$(($(egrep "(Swap|Mem)Total" /proc/meminfo | awk '{sum += $2} END {print sum}')))
-freemem=$(($(egrep "(Swap|Mem)Free" /proc/meminfo | awk '{sum += $2} END {print sum}')))
-echo $((100 - freemem * 100 / totalmem))
