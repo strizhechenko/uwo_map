@@ -1,8 +1,0 @@
-{% include '__graphics_header.html' %}
-<div class='row'>
-{% for graphic in env.data %}
-	{% if period in graphic.name: %}
-		<div class='span7' id="chart_div_{{graphic.name}}" style="height: 350px;"></div>
-	{% endif %}
-{% endfor %}
-</div>

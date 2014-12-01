@@ -1,9 +1,0 @@
-{% extends "default.html" %}
-
-{% block content %}
-<h2>/usr/local/Reductor/lists/{{ env.list }}</h2>
-<a href="/lists/{{env.list}}" class='button bg-hover-dark fg-hover-white'><i class="icon-user-2"></i> Для человеков</a>
-<a href="/machine_lists/{{env.list}}" class='button bg-hover-dark fg-hover-white'><i class="icon-android"></i> Для роботов</a>
-<hr>
-{{ super() }}
-{% endblock %}
