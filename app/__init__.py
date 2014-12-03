@@ -25,7 +25,7 @@ def get_artists(username):
 
 @app.route("/")
 @app.route("/people", methods=['GET', 'POST'])
-def graphics():
+def people():
     user1, user2 = request.args.get('user1'), request.args.get('user2')
     user1artists = get_artists(user1)
     if not user1:
@@ -33,7 +33,8 @@ def graphics():
     user2artists = get_artists(user2)
     if not user2:
         user2 = ''
-    env = { 'user1': user1, 'user2': user2, 'user1artists': user1artists, 'user2artists': user2artists }
+    diff = set(user1artists) & set(user2artists)
+    env = {'user1': user1, 'user2': user2, 'user1artists': user1artists, 'user2artists': user2artists, 'diff': diff}
     return r_render('people.html', env)
 
 if __name__ == "__main__":

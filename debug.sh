@@ -1,3 +1,3 @@
 #!/bin/bash
 
-uwsgi -s 0.0.0.0:80 --chdir=/opt/reductor_web --pidfile=/run/reductor_web.pid  --protocol=http -w WSGI:app
+uwsgi -s 127.0.0.1:8085 --chdir=/opt/lastfm --pidfile=/run/lastfm.pid  --protocol=http -w WSGI:app

@@ -14,17 +14,24 @@
 	<p>Введя два имени пользователя вы получите отсортированный в двух порядках список пересечения групп: первый порядок отсортирован по количеству прослушиваний первого пользователя, второй, соответственно по прослушиваниям второго</p>
 </div>
 {% else %}
-<div class="span6">
+<div class="span4">
 	<h1>{{env.user1}}</h1>
 	{% for artist in env.user1artists %}
 	<p>{{artist}}</p>
 	{% endfor %}
 </div>
-<div class="span6">
+<div class="span4">
 	<h1>{{env.user2}}</h1>
 	{% for artist in env.user2artists %}
 	<p>{{artist}}</p>
 	{% endfor %}
 </div>
+<div class="span4">
+	<h1>Общие</h1>
+	{% for artist in env.diff %}
+	<p>{{artist}}</p>
+	{% endfor %}
+</div>
+
 {% endif %}
 {% endblock %}
