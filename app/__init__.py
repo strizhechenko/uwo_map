@@ -37,5 +37,19 @@ def people():
     env = {'user1': user1, 'user2': user2, 'user1artists': user1artists, 'user2artists': user2artists, 'diff': diff}
     return r_render('people.html', env)
 
+@app.route("/first", methods=['GET', 'POST'])
+def first():
+    user1, user2 = request.args.get('user1'), request.args.get('user2')
+    user1artists = get_artists(user1)
+    if not user1:
+        user1 = ''
+    user2artists = get_artists(user2)
+    if not user2:
+        user2 = ''
+    diff = set(user1artists) - (set(user1artists) & set(user2artists))
+    env = {'user1': user1, 'user2': user2, 'user1artists': user1artists, 'user2artists': user2artists, 'diff': diff}
+    return r_render('people.html', env)
+
+
 if __name__ == "__main__":
     app.run()
