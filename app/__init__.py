@@ -37,6 +37,23 @@ def people():
     env = {'user1': user1, 'user2': user2, 'user1artists': user1artists, 'user2artists': user2artists, 'diff': diff}
     return r_render('people.html', env)
 
+@app.route("/three", methods=['GET', 'POST'])
+def three():
+    user1, user2, user3 = request.args.get('user1'), request.args.get('user2'), request.args.get('user3')
+    user1artists = get_artists(user1)
+    if not user1:
+        user1 = ''
+    user2artists = get_artists(user2)
+    if not user2:
+        user2 = ''
+    user3artists = get_artists(user3)
+    if not user3:
+        user3 = ''
+    diff = set(user1artists) & set(user2artists) & set(user3artists)
+    env = {'diff': diff}
+    return r_render('people.html', env)
+
+
 @app.route("/first", methods=['GET', 'POST'])
 def first():
     user1, user2 = request.args.get('user1'), request.args.get('user2')
@@ -50,6 +67,18 @@ def first():
     env = {'user1': user1, 'user2': user2, 'user1artists': user1artists, 'user2artists': user2artists, 'diff': diff}
     return r_render('people.html', env)
 
+@app.route("/eval", methods=['GET', 'POST'])
+def eval():
+    user1, user2 = request.args.get('user1'), request.args.get('user2')
+    user1artists = get_artists(user1)
+    if not user1:
+        user1 = ''
+    user2artists = get_artists(user2)
+    if not user2:
+        user2 = ''
+    diff = set(user1artists) - (set(user1artists) & set(user2artists))
+    env = {'user1': user1, 'user2': user2, 'user1artists': user1artists, 'user2artists': user2artists, 'diff': diff}
+    return r_render('eval.html', env)
 
 if __name__ == "__main__":
     app.run()

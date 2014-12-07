@@ -1,11 +1,11 @@
 {% extends "default.html" %}
 
 {% block content %}
-<form class="input-control text span3" name=form action="people">
-	<input name="user1" style="margin: 10px;" value="{{env.user1}}" type="text" placeholder="Первый пользователь"/>
-	<input name="user2" style="margin: 10px;" value="{{env.user2}}" type="text" placeholder="Второй пользователь"/>
-	<button style="margin: 10px; width: 100%; height: 35px;">Сравнить!</button>
+<form class="input-control text span3" name=form action="first">
+	<input name="expr" style="margin: 10px;" value="{{env.expr}}" type="text" placeholder="user1 & user2"/>
+	<button style="margin: 10px; width: 100%; height: 35px;">Вычислить!</button>
 </form>
+
 <div class="span1">
 </div>
 {% if not env.user1 or not env.user2 %}
@@ -26,7 +26,6 @@
 	<p>{{artist}}</p>
 	{% endfor %}
 </div>
-{% endif %}
 <div class="span4">
 	<h1>Общие</h1>
 	{% for artist in env.diff %}
@@ -34,5 +33,5 @@
 	{% endfor %}
 </div>
 
-
+{% endif %}
 {% endblock %}

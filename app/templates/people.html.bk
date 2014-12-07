@@ -26,7 +26,6 @@
 	<p>{{artist}}</p>
 	{% endfor %}
 </div>
-{% endif %}
 <div class="span4">
 	<h1>Общие</h1>
 	{% for artist in env.diff %}
@@ -34,5 +33,5 @@
 	{% endfor %}
 </div>
 
-
+{% endif %}
 {% endblock %}
