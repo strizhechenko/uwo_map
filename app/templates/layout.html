@@ -12,12 +12,11 @@
 		{% endblock %}
 	</head>
 	<body class="metro">
-		{% block navbar %}
-		{% include 'nav_bar.html' %}
-		{% endblock %}
 		<div class="grid">
 			{% block grid %}
 			<div class="row">
+				{% block sidebar %}
+				{% endblock %}
 				{% block content %}
 				{% endblock %}
 			</div>
