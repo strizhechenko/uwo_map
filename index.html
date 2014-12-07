@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Uwo map by strizhechenko</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Uwo map</h1>
+        <p>Uncharted Waters Online Interactive World Map With Trading Hints</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/strizhechenko/uwo_map" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/strizhechenko/uwo_map/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/strizhechenko/uwo_map/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a id="Что-это" class="anchor" href="#%D0%A7%D1%82%D0%BE-%D1%8D%D1%82%D0%BE" aria-hidden="true"><span class="octicon octicon-link"></span></a>Что это</h1>
+
+<p>Мы попытались сделать удобную карту для игроков в Uncharted Waters Online. Она позволяет легко просматривать какие товары можно выгодно продать в любом из городов, что в свою очередь позволяет планировать закупки перед отправкой в путешествие, не прыгая со страницы на страницу в официальной wiki игры.</p>
+
+<h1>
+<a id="Как-оно-устроено" class="anchor" href="#%D0%9A%D0%B0%D0%BA-%D0%BE%D0%BD%D0%BE-%D1%83%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%BE" aria-hidden="true"><span class="octicon octicon-link"></span></a>Как оно устроено</h1>
+
+<p>Устроено страшным образом - имеется "база данных", хранящаяся в разметке Markdown, для её обработки был по быстрому накидан парсер на Python. Веб-страницы рисуются с помощью flask + jinja2, с помощью jquery совершаются запросы по конкретным городам. Изначально вёрстка страницы выполнялась с использованием MetroUI, но со временем он, скорее всего станет не нужным и будет выпилен.</p>
+
+<h1>
+<a id="Зачем-ещё-один" class="anchor" href="#%D0%97%D0%B0%D1%87%D0%B5%D0%BC-%D0%B5%D1%89%D1%91-%D0%BE%D0%B4%D0%B8%D0%BD" aria-hidden="true"><span class="octicon octicon-link"></span></a>Зачем ещё один..</h1>
+
+<p>Проект скорее учебный, чем полезный.</p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/strizhechenko">strizhechenko</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
