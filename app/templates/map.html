@@ -1,13 +1,9 @@
 {% extends "default.html" %}
 
+{% block head %}
+
+{% endblock %}
+
 {% block content %}
-		<div style='background-color: #eeffff;' class="span15"></div>
-		{% for city in env.cities %}
-			<div style='margin: 10px; padding: 10px; background-color: #eeffee;' class="span4">
-			<h2 name="{{city.name}}">{{city.name}}</h2>
-			{% for good in city.goods %}
-				<p>{{good}}</p>
-			{% endfor %}
-			</div>
-		{% endfor %}
+<img src="static/img/worldmap.png" class='pict'>
 {% endblock %}

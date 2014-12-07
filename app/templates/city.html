@@ -1,0 +1,6 @@
+<div style='margin: 10px; padding: 10px; background-color: #eeffee;' class="span4">
+	<h2 name="{{env.city.name}}">{{env.city.name}}</h2>
+	{% for good in env.city.goods %}
+		<p>{{good}}</p>
+	{% endfor %}
+</div>

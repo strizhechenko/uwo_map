@@ -13,6 +13,23 @@ def unicode_file(fname):
 
 file = 'app/data/db.markdown'
 
+def get_city(city):
+    f = open(file)
+    found = False
+    goods = []
+    line = f.readline()
+    while line:
+        if line == ('# ' + city + "\n"):
+            print "found! " + line
+            found = True
+        if found and line.startswith('- '):
+            goods.append(line.replace('- ', '').replace("\n", ''))
+        if found and line.startswith('# ') and line != ("# " + city + "\n"):
+            break
+        line = f.readline()
+    return City(city, goods)
+
+
 def read_cities():
     f = open(file)
     cities = []
